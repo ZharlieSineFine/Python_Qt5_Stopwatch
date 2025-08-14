@@ -48,20 +48,30 @@ class Stopwatch(QWidget):
             }
         """)
 
+        self.start_button.clicked.connect(self.start)
+        self.stop_button.clicked.connect(self.stop)
+        self.reset_button.clicked.connect(self.reset)
+        self.timer.timeout.connect(self.update_time)
+
     def start(self):
-        pass
+        self.timer.start(10)
 
     def stop(self):
-        pass
+        self.timer.stop()
 
     def reset(self):
         pass
 
     def format_time(self, time):
-        pass
+        hours = time.hour()
+        minutes = time.minute()
+        seconds = time.second()
+        milliseconds = time.msec()
+        return f"{hours:02}:{minutes:02}:{seconds:02}.{milliseconds:02}"
 
     def update_time(self):
-        pass
+        self.time = self.time.addMSecs(10)
+        self.time_label.setText(self.format_time(self.time))
 
 
 if __name__ == '__main__':
