@@ -17,9 +17,22 @@ class Stopwatch(QWidget):
         self.init_ui()
 
     def init_ui(self):
+        self.setWindowTitle("Stopwatch")
+
+    def start(self):
         pass
 
+    def stop(self):
+        pass
 
+    def reset(self):
+        pass
+
+    def format_time(self, time):
+        pass
+
+    def update_time(self):
+        pass
 
 
 if __name__ == '__main__':
