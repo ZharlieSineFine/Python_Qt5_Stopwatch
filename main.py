@@ -22,7 +22,6 @@ class Stopwatch(QWidget):
         vbox = QVBoxLayout()
         vbox.addWidget(self.time_label)
 
-
         self.setLayout(vbox)
 
         self.time_label.setAlignment(Qt.AlignCenter)
@@ -34,11 +33,18 @@ class Stopwatch(QWidget):
         vbox.addLayout(hbox)
 
         self.setStyleSheet("""
+            QPushButton, QLabel{
+                padding: 20px;
+                font-weight: bold;
+                font-family: Calibri;
+            }
             QPushButton {
                 font-size: 50px;
             }
             QLabel{
                 font-size: 120px;
+                background-color: hsl(214, 86%, 86%);
+                border-radius: 20px;
             }
         """)
 
